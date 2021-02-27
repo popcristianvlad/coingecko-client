@@ -9,6 +9,10 @@ Java client for the CoinGecko API.
 This is a java client which intends to offer interaction with CoinGecko's public
 API: https://www.coingecko.com/en/api#explore-api
 
+## Implementation
+
+The implementation was done using Jersey Client 3 together with the included Jackson framework.
+
 ## Usage
 
 Retrieving an instance of the service:
@@ -27,8 +31,4 @@ Using the retrieved service to get a list of all available coins:
 
 ```
 List<Coin> coins = coinGeckoService.listCoins(false);
-```
-
-```
-List<Coin> coins = coinGeckoService.listCoins(true);
 ```

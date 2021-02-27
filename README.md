@@ -2,12 +2,12 @@
 
 Java client for the CoinGecko API.
 
-![Alt text](coingecko.png?raw=true "CoinGecko")
+![Alt text](coingecko.png "https://coingecko.com/")
 
 ## Description
 
 This is a java client which intends to offer interaction with CoinGecko's public
-api (https://www.coingecko.com/en/api#explore-api).
+API: https://www.coingecko.com/en/api#explore-api
 
 ## Usage
 

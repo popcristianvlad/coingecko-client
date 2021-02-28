@@ -2,6 +2,7 @@ package com.popcristianvlad.coingecko.client.service;
 
 import com.popcristianvlad.coingecko.client.config.CoinGeckoConfig;
 import com.popcristianvlad.coingecko.client.representation.Coin;
+import com.popcristianvlad.coingecko.client.representation.CoinHistoricalData;
 import jakarta.ws.rs.client.Client;
 import jakarta.ws.rs.client.ClientBuilder;
 import jakarta.ws.rs.core.GenericType;
@@ -29,6 +30,18 @@ public class CoinGeckoServiceImpl implements CoinGeckoService {
         return client
                 .target(coinGeckoConfig.getListCoinsApiUrl())
                 .queryParam("include_platform", includePlatformContractAddresses)
+                .request(MediaType.APPLICATION_JSON)
+                .get(new GenericType<>() {
+                    // Nothing to do
+                });
+    }
+
+    @Override
+    public CoinHistoricalData getCoinHistoricalData(String coinId, String atDate, String localizedLanguages) {
+        return client
+                .target(coinGeckoConfig.getGetHistoricalDataApiUrl().replace("{coinId}", coinId))
+                .queryParam("date", atDate)
+                .queryParam("localization", localizedLanguages)
                 .request(MediaType.APPLICATION_JSON)
                 .get(new GenericType<>() {
                     // Nothing to do

@@ -150,7 +150,7 @@ public class CoinHistoricalData {
                 '}';
     }
 
-    class Image {
+    public class Image {
 
         /**
          * e.g. https://assets.coingecko.com/coins/images/1/thumb/bitcoin.png?1547033579
@@ -203,7 +203,7 @@ public class CoinHistoricalData {
         }
     }
 
-    class MarketData {
+    public class MarketData {
 
         /**
          * e.g. usd -> 13620.3618741461
@@ -273,7 +273,7 @@ public class CoinHistoricalData {
         }
     }
 
-    class CommunityData {
+    public class CommunityData {
 
         /**
          * e.g. 1000
@@ -388,7 +388,7 @@ public class CoinHistoricalData {
         }
     }
 
-    class DeveloperData {
+    public class DeveloperData {
 
         /**
          * e.g 13660

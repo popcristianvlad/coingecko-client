@@ -9,13 +9,16 @@ public class CoinGeckoConfig {
 
     private static final String FALLBACK_LIST_COINS_API = FALLBACK_BASE_API + "/coins/list";
     private static final String FALLBACK_GET_HISTORICAL_DATA_API = FALLBACK_BASE_API + "/coins/{coinId}/history";
+    private static final String FALLBACK_GET_CURRENT_COIN_DATA_API = FALLBACK_BASE_API + "/coins/{coinId}";
 
     private String listCoinsApiUrl;
     private String getHistoricalDataApiUrl;
+    private String getCurrentCoinDataApiUrl;
 
     public CoinGeckoConfig() {
         listCoinsApiUrl = FALLBACK_LIST_COINS_API;
         getHistoricalDataApiUrl = FALLBACK_GET_HISTORICAL_DATA_API;
+        getCurrentCoinDataApiUrl = FALLBACK_GET_CURRENT_COIN_DATA_API;
     }
 
     public String getListCoinsApiUrl() {
@@ -26,10 +29,15 @@ public class CoinGeckoConfig {
         return getHistoricalDataApiUrl;
     }
 
+    public String getGetCurrentCoinDataApiUrl() {
+        return getCurrentCoinDataApiUrl;
+    }
+
     public static class Builder {
 
         private String listCoinsApiUrl;
         private String getHistoricalDataApiUrl;
+        private String getCurrentCoinDataApiUrl;
 
         public Builder() {
         }
@@ -44,6 +52,11 @@ public class CoinGeckoConfig {
             return this;
         }
 
+        public Builder withGetCurrentCoinDataApiUrl(String getCurrentCoinDataApiUrl) {
+            this.getCurrentCoinDataApiUrl = getCurrentCoinDataApiUrl;
+            return this;
+        }
+
         public CoinGeckoConfig build() {
             CoinGeckoConfig coinGeckoConfig = new CoinGeckoConfig();
 
@@ -53,6 +66,10 @@ public class CoinGeckoConfig {
 
             if (getHistoricalDataApiUrl != null) {
                 coinGeckoConfig.getHistoricalDataApiUrl = getHistoricalDataApiUrl;
+            }
+
+            if (getCurrentCoinDataApiUrl != null) {
+                coinGeckoConfig.getCurrentCoinDataApiUrl = getCurrentCoinDataApiUrl;
             }
 
             return coinGeckoConfig;

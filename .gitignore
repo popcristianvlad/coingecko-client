@@ -1,6 +1,6 @@
-### Maven ###
-target
-
-### IntelliJ IDEA ###
+# Intellij IDEA
 .idea
 *.iml
+
+# Maven
+target
